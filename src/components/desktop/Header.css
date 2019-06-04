@@ -1,0 +1,17 @@
+.header {
+    background-color: #0D9EDF;
+    color: #fff;
+    padding: 16px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.navbar li {
+    padding: 8px;
+    width: 60px;
+    text-align: center;
+}

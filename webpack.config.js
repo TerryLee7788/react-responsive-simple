@@ -1,3 +1,5 @@
+var autoprefixer = require('autoprefixer');
+
 module.exports = {
     // https://webpack.js.org/configuration/entry-context
     entry: [
@@ -24,6 +26,31 @@ module.exports = {
                     // 'eslint-loader'
                 ]
             },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        // https://github.com/webpack-contrib/css-loader#options
+                        options: {
+                            // sourceMap: true,
+                            modules: true,
+                            importLoaders: 1
+                        }
+                    },
+                    // https://github.com/postcss/postcss-loader
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                // https://github.com/postcss/postcss-loader#autoprefixing
+                                autoprefixer({ browsers: ['last 2 versions'] }),
+                            ]
+                        }
+                      }
+                ]
+            }
         ]
     },
     // https://webpack.js.org/configuration/resolve/

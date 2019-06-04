@@ -1,0 +1,4 @@
+.header {
+    composes: header from "../desktop/Header.css";
+    background-color: #FF7701;
+}
